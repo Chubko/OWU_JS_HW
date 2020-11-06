@@ -359,20 +359,33 @@
 
 // 2) Deep Copy
 // реалізувати глибоке копіювання обєкту за допомогою рекурсій
-// const person = {
-//         name: 'Ivan',
-//         surname: 'Boyko',
-//         age: 28,
-//         wife:{
-//             name: 'Oksana',
-//             age: 24
-//         },
-//         job:{
-//             company: 'XXX',
-//             position: 'manager'
-//         }
-//     };
-    
+const person = {
+        name: 'Ivan',
+        surname: 'Boyko',
+        age: 28,
+        wife:{
+            name: 'Oksana',
+            age: 24
+        },
+        job:{
+            company: 'XXX',
+            position: 'manager'
+        }
+    };
+   function deepCopy(object){
+    let clone = {};
+    for (const key in object) {
+        if (typeof object[key] == 'object') {
+            deepCopy(object[key]);
+        }
+        clone[key] = object[key];
+    }
+    return clone;
+   } 
+
+ let clonePerson = deepCopy(person);
+ console.log(clonePerson);
+
 // const clonePerson = JSON.parse(JSON.stringify(person));
 // console.log(clonePerson);    
 
