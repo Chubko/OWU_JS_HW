@@ -379,3 +379,46 @@
 //     }
 // };
 
+// *****(Прям овердоз с рекурсией) Создать функцию которая принимает какой-либо элемент DOM-структуры .Функция создает в боди 2 кнопки (назад/вперед)
+// при нажатии вперед, вы переходите к дочернему элементу, при еще одном нажатии на "вперед", вы переходите к следующему дочернему элементу (лежащему на одном уровне)
+// НО если у (какого-либо)дочеренего элемента есть дети, то нажатие "вперед" позволяет нам войти внутрь элемента и  выводит первого ребенка. и тд.
+// Когда все дети заканчиваются, мы выходим из данного дочернего элемента и переходим к следующему, лежащему с ним на одном уровне
+
+let rules = document.querySelectorAll('*');
+
+function showElements(element){
+    let btnLeft = document.createElement('button');
+    let btnRight = document.createElement('button');
+    btnLeft.classList.add('arrow-left');
+    btnRight.classList.add('arrow-right');
+    document.body.appendChild(btnLeft);
+    document.body.appendChild(btnRight);
+    let index = 0;
+
+    function rightBtn(element){
+    btnRight.addEventListener('click',()=>{
+    if(index<element.length){    
+        if(element[index] === 'object'){
+        rightBtn(element[index]);
+        }
+        console.log(element[index]);
+        index++; 
+    }   
+    });
+    }
+    rightBtn(element);
+
+    function leftBtn(element){
+        btnLeft.addEventListener('click',()=>{
+        if(index<element.length){    
+            if(element[index] === 'object'){
+            leftBtn(element[index]);
+            }
+            console.log(element[index]);
+            index--; 
+        }   
+        });
+        }
+    leftBtn(element);
+}
+showElements(rules);
