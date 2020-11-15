@@ -1,0 +1,91 @@
+
+
+.active{
+    display: block;
+}
+
+.hidden{
+    display: none;
+}
+
+.button{
+    width: 200px;
+    margin: 40px;
+}
+
+.column{
+    width: 200px;
+    height: 100px;
+    border: 2px solid black ;
+}
+
+.arrow-left {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    border: 3px solid gray;
+    border-radius: 50%;
+  }
+  .arrow-left:after {
+    position: absolute;
+    top: 17px;;
+    left: 21px;
+    content: '';
+    display: block;
+    width: 27px;
+    height: 27px;
+    border-left: 3px solid gray;
+    border-bottom: 3px solid gray;
+    transform: rotate(45deg);
+  }
+
+  .arrow-right {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    border: 3px solid gray;
+    border-radius: 50%;
+  }
+  .arrow-right:after {
+    position: absolute;
+    top: 17px;;
+    right: 21px;
+    content: '';
+    display: block;
+    width: 27px;
+    height: 27px;
+    border-left: 3px solid gray;
+    border-bottom: 3px solid gray;
+    transform: rotate(225deg);
+  }
+  .image{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+  }
+
+  .wrapper{
+      display: flex;
+      width: fit-content;
+      justify-content: space-between;
+  }
+
+  .wrapper aside{
+
+      margin-right: 50px;
+      font-size: 20px;
+  }
+
+  .wrapper ul{
+    position: sticky;
+    top:0px;
+  }
+
+  .wrapper li{
+    list-style-type: none;
+  }
+
+  .wrapper a{
+      text-decoration: none;
+  }
