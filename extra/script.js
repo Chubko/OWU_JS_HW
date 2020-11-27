@@ -146,53 +146,67 @@
 // num.increment();
 
 // Перебрати масив за допомогою колбеків
-function  showArray(callback){
-    callback();
-}
+// function  showArray(callback){
+//     callback();
+// }
+//
+// let arr = [1,3,5,6,7,8];
+//
+// showArray(()=>{
+//     let i = 0;
+//     if(i < arr.length) {
+//         console.log(arr[i]);
+//         i++;
+//         showArray(() => {
+//             if (i < arr.length) {
+//                 console.log(arr[i]);
+//                 i++;
+//                 showArray(() => {
+//                     if (i < arr.length) {
+//                         console.log(arr[i]);
+//                         i++;
+//                         showArray(() => {
+//                             if (i < arr.length) {
+//                                 console.log(arr[i]);
+//                                 i++;
+//                                 showArray(() => {
+//                                     if (i < arr.length) {
+//                                         console.log(arr[i]);
+//                                         i++;
+//                                         showArray(() => {
+//                                             if (i < arr.length) {
+//                                                 console.log(arr[i]);
+//                                                 i++;
+//                                                 showArray(() => {
+//                                                     if (i < arr.length) {
+//                                                         console.log(arr[i]);
+//                                                         i++;
+//                                                     }
+//                                                 });
+//                                             }
+//                                         });
+//
+//                                     }
+//                                 });
+//                             }
+//                         });
+//                     }
+//                 });
+//             }
+//         });
+//     }
+// });
 
-let arr = [1,3,5,6,7,8];
-
-showArray(()=>{
-    let i = 0;
-    if(i < arr.length) {
-        console.log(arr[i]);
-        i++;
-        showArray(() => {
-            if (i < arr.length) {
-                console.log(arr[i]);
-                i++;
-                showArray(() => {
-                    if (i < arr.length) {
-                        console.log(arr[i]);
-                        i++;
-                        showArray(() => {
-                            if (i < arr.length) {
-                                console.log(arr[i]);
-                                i++;
-                                showArray(() => {
-                                    if (i < arr.length) {
-                                        console.log(arr[i]);
-                                        i++;
-                                        showArray(() => {
-                                            if (i < arr.length) {
-                                                console.log(arr[i]);
-                                                i++;
-                                                showArray(() => {
-                                                    if (i < arr.length) {
-                                                        console.log(arr[i]);
-                                                        i++;
-                                                    }
-                                                });
-                                            }
-                                        });
-
-                                    }
-                                });
-                            }
-                        });
-                    }
-                });
-            }
-        });
+// Перебрати масив за допомогою рекурсії
+function recursion(array){
+    for (const element of array) {
+        if (Array.isArray(element)) {
+            recursion(element);
+        }else {
+            console.log(element);
+        }
     }
-});
+}
+let arr = [4,6,3,89,[1.2,6,8,90,[54,3,2]]];
+recursion(arr);
+
