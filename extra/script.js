@@ -132,19 +132,6 @@
 // console.log(findXO("zpzpzpp")) ;
 // console.log(findXO("zzoo")) ;
 
-//написати каунтер на замиканнях
-
-// function  counter(){
-//     let number = 0;
-//     function increment(){
-//         console.log(number++);
-//     }
-//     return {increment};
-// }
-// let num = counter();
-// num.increment();
-// num.increment();
-
 // Перебрати масив за допомогою колбеків
 // function  showArray(callback){
 //     callback();
@@ -198,15 +185,36 @@
 // });
 
 // Перебрати масив за допомогою рекурсії
-function recursion(array){
-    for (const element of array) {
-        if (Array.isArray(element)) {
-            recursion(element);
-        }else {
-            console.log(element);
-        }
-    }
+// function recursion(array){
+//     for (const element of array) {
+//         if (Array.isArray(element)) {
+//             recursion(element);
+//         }else {
+//             console.log(element);
+//         }
+//     }
+// }
+// let arr = [4,6,3,89,[1.2,6,8,90,[54,3,2]]];
+// recursion(arr);
+
+// function makeCounter() {
+//     let count = 0;
+//
+//     return function() {
+//         return count++; // есть доступ к внешней переменной "count"
+//     };
+// }
+//
+// let counter = makeCounter();
+//
+// console.log( counter() ); // 0
+// console.log( counter() ); // 1
+// console.log( counter() ); // 2
+
+function test() {
+    return this;
 }
-let arr = [4,6,3,89,[1.2,6,8,90,[54,3,2]]];
-recursion(arr);
+let y = test();
+console.log(y)
+
 

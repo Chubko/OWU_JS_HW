@@ -85,3 +85,8 @@
 // }
 // console.log(calculator(2,3,4,(a,b,c)=> a+b-c));
     
+
+let array = [5,7,89,45,32,1,3,5,11,54,67,8,90,114,34,2,58,89,0,22];
+console.log(array);
+array.reverse();
+console.log(array);
